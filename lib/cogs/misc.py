@@ -2,6 +2,7 @@ from discord.ext.commands import Cog, command
 from discord import Member
 from typing import Optional
 import random
+
 class Misc(Cog):
 
     def __init__(self, bot):
@@ -28,7 +29,7 @@ class Misc(Cog):
         await ctx.send(f'Wazzup {ctx.author.mention}!')
     
     @command(name='calc')
-    async def calc(self, ctx, message:str):
+    async def calc(self, ctx, message: str):
         """
             Give it a mathematical expression it will calculate it for you :) very smart bot very genius <3
             i.e : 5+5

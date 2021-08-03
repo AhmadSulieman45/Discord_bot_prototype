@@ -1,6 +1,5 @@
 from asyncio.tasks import sleep
 from glob import glob
-from datetime import datetime
 import discord
 from discord import Intents
 from discord.ext.commands import Bot as DiscordBot
@@ -105,8 +104,8 @@ class Bot(DiscordBot):
         if not message.author.bot:
             if message.content.startswith(PREFIX):
                 await self.process_commands(message)
-            elif 'fuck you' in message.content.lower():
-                await message.channel.send(f'FUCK YOU BITCH {message.author.mention}')
+            elif message in CURSE_WORDS: 
+                await message.channel.send(f'{message} YOU BITCH {message.author.mention}')
 
     async def on_error(self, err, *args, **kwargs):
         if err == 'on_command_error':
